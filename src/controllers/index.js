@@ -10,6 +10,9 @@ const postComment = require('./postComment.js');
 const getComments = require('./getComments.js');
 const putLikeComment = require('./putLikeComment.js');
 const getUserById = require('./getUserById.js');
+const getResponses = require('./getResponses.js');
+const postResponse = require('./postResponse.js');
+const putLikeResponse = require('./putLikeResponse.js');
 
 module.exports = {
   postUser,
@@ -23,5 +26,8 @@ module.exports = {
   postComment,
   getComments,
   putLikeComment,
-  getUserById
+  getUserById,
+  getResponses,
+  postResponse,
+  putLikeResponse
 };

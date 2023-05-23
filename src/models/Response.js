@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-const { ResponseSchema } = require('./Response.js');
 
-const CommentSchema = new mongoose.Schema({
-  postId: {
+const ResponseSchema = new mongoose.Schema({
+  commentId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Post'
+    ref: 'Comment'
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -14,7 +13,7 @@ const CommentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  comment: {
+  response: {
     type: String,
     required: true
   },
@@ -30,16 +29,15 @@ const CommentSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
-  commentLikes: [{
+  responseLikes: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
-  }],
-  responses: [ResponseSchema]
+  }]
 });
 
-const Comment = mongoose.model('Comment', CommentSchema);
+const Response = mongoose.model('Response', ResponseSchema);
 
 module.exports = {
-  Comment,
-  CommentSchema
+  Response,
+  ResponseSchema
 };

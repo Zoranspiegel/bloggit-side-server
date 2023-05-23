@@ -26,7 +26,8 @@
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json",
     "rules": {
-      "semi": ["error", "always"]
+      "semi": ["error", "always"],
+      "eqeqeq": "off"
     }
   }
 }
